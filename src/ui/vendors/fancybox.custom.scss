@@ -23,18 +23,18 @@
     opacity  : 0;
     animation: close-entry .25s .5s forwards !important;
 
-    @media(max-width:theme('screens.sm')) {
+    @media(max-width:theme('screens.lg')) {
       position: absolute;
       width   : 32px;
       height  : 32px;
-      top     : 0;
-      right   : 0;
+      top     : 8px;
+      right   : 8px;
       padding : 0;
 
     }
 
     svg {
-      @media(max-width:theme('screens.sm')) {
+      @media(max-width:theme('screens.lg')) {
         filter: none;
         color : theme('colors.default');
         width : 12px;

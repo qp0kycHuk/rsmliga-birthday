@@ -2,7 +2,7 @@
 
 :root {
   // theme colors
-  --primary-rgb : #{cl(#1B4B9B)};
+  --primary-rgb : #{cl(#CA2250)};
   --sec-rgb     : #{cl(#CE9B44)};
   --blue-rgb    : #{cl(#2173E5)};
   --red-rgb     : #{cl(#c0392b)};
@@ -11,9 +11,9 @@
 
   // colors
   --bg1-rgb     : #{cl(#ededed)};
-  --bg2-rgb     : #{cl(#F5F7FB)};
+  --bg2-rgb     : #{cl(#E6EBF2)};
   --bg3-rgb     : #{cl(#fff)};
-  --default-rgb : #{cl(#373737)};
+  --default-rgb : #{cl(#242424)};
   --white-rgb   : #{cl(#fff)};
   --black-rgb   : #{cl(#000)};
 
@@ -101,6 +101,492 @@ body {
         transform: scaleX(1);
       }
     }
+  }
+
+  .title {
+    font-size     : 42px;
+    font-weight   : 800;
+    line-height   : calc(51 / 42);
+    text-transform: uppercase;
+
+    @media (max-width: theme('screens.lg')) {
+      font-size: 32px;
+    }
+
+    @media (max-width: theme('screens.sm')) {
+      font-size: 28px;
+    }
+  }
+
+  .btn {
+    border-radius: 12px;
+
+    &-text {
+      border-radius: initial;
+    }
+  }
+}
+
+
+.started {
+  background:
+    url("../img/started-bg.jpg") repeat-x top / auto 770px, #22050C;
+  height        : 882px;
+  padding-top   : 96px;
+  padding-bottom: 0;
+  position      : relative;
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  overflow      : hidden;
+
+  @media (max-width: theme('screens.md')) {
+    padding-top: 62px;
+    height     : auto;
+    background :
+      url("../img/started-bg-sm.jpg") repeat-x top / auto calc(100% - 100px), #22050C;
+  }
+
+  &-shadow {
+    position     : absolute;
+    height       : 734px;
+    width        : 800px;
+    left         : calc(50% - 400px);
+    top          : calc(50% - 734px / 2);
+    border-radius: 50%;
+    background   : rgba(0, 0, 0, 0.5);
+    filter       : blur(200px);
+
+    @media (max-width: theme('screens.md')) {
+      display: none;
+    }
+  }
+
+  &-clouds {
+    background:
+      url("../img/started-top.png") repeat-x top / auto,
+      url("../img/started-bottom.png") repeat-x center calc(100% - 112px) / auto,
+      linear-gradient(0deg, #fff 112px, rgba(0, 0, 0, 0) 112px);
+
+    @media (max-width: theme('screens.md')) {
+      z-index: 6;
+      background:
+        url("../img/started-top-sm.png") repeat-x top / auto,
+        url("../img/started-bottom-sm.png") repeat-x center calc(100% - 100px) / auto,
+        linear-gradient(0deg, #fff 100px, rgba(0, 0, 0, 0) 100px);
+    }
+  }
+
+  &-left {
+    top  : 95px;
+    right: calc(50% + 168px + 95px);
+
+    @media (max-width: theme('screens.md')) {
+      width  : 182px;
+      right  : auto;
+      left   : calc(50% - 28px);
+      z-index: 5;
+    }
+  }
+
+  &-right {
+    top : 74px;
+    left: calc(50% + 148px + 95px);
+
+    @media (max-width: theme('screens.md')) {
+      width  : 288px;
+      left   : auto;
+      right  : calc(50% - 112px);
+      z-index: 4;
+    }
+  }
+
+  &-right,
+  &-left {
+    position: absolute;
+
+    @media (max-width: theme('screens.md')) {
+      top: calc(100% - 432px);
+    }
+  }
+
+
+  &-content {
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+    text-align    : center;
+    position      : relative;
+    color         : #fff;
+
+    @media (max-width: theme('screens.md')) {
+      z-index: 10;
+    }
+  }
+
+  &-bottom {
+    margin-top    : auto;
+    position      : relative;
+    display       : flex;
+    flex-direction: column;
+    align-items   : center;
+
+    @media (max-width: theme('screens.md')) {
+      margin-top: 342px;
+      z-index   : 10;
+    }
+  }
+
+  &-logo {
+    margin-bottom: 14px;
+    width        : 371px;
+    height       : 114px;
+
+    @media (max-width: theme('screens.md')) {
+      width : 314px;
+      height: 98px;
+    }
+  }
+
+  &-title {
+    font-size     : 56px;
+    line-height   : calc(67 / 56);
+    font-weight   : 800;
+    text-transform: uppercase;
+    margin-bottom : 14px;
+
+    @media (max-width: theme('screens.md')) {
+      font-size: 42px;
+    }
+  }
+
+  &-subtitle {
+    font-size     : 24px;
+    line-height   : calc(28 / 24);
+    font-weight   : 800;
+    text-transform: uppercase;
+
+    @media (max-width: theme('screens.md')) {
+      font-size: 20px;
+    }
+  }
+}
+
+.programm {
+  padding-top   : 72px;
+  padding-bottom: 115px;
+  background    :
+    url("../img/started-bottom.png") repeat-x center bottom / auto,
+    linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, rgba(230, 235, 242, 0.6) 65.15%), theme('colors.l3');
+
+  @media (max-width: theme('screens.md')) {
+    background:
+      url("../img/started-bottom-sm.png") repeat-x center bottom / auto,
+      linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, rgba(230, 235, 242, 0.6) 65.15%), theme('colors.l3');
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    padding-top   : 52px;
+    padding-bottom: 72px;
+  }
+
+  &-grid {
+    grid-auto-rows: 1fr;
+  }
+
+  &-item {
+    padding       : 16px;
+    padding-bottom: 32px;
+    border-radius : 16px;
+    background    : theme('colors.l3');
+
+    @media (max-width: theme('screens.sm')) {
+      padding       : 8px;
+      padding-bottom: 20px;
+    }
+
+    &-image {
+      height: 126px;
+      background:
+        url("../img/programm-image.jpg") no-repeat center / cover,
+        linear-gradient(278.61deg, rgba(239, 48, 98, 0.4) 0%, rgba(60, 3, 15, 0.4) 100%), theme('colors.primary');
+      border-radius: 16px;
+      margin-bottom: 24px;
+
+      display        : flex;
+      align-items    : center;
+      justify-content: center;
+      font-size      : 60px;
+
+      @media (max-width: theme('screens.sm')) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+.reglament {
+  padding-top   : 72px;
+  padding-bottom: 56px;
+  background    : theme('colors.l3');
+
+  @media (max-width: theme('screens.sm')) {
+    padding-top   : 32px;
+    padding-bottom: 32px;
+  }
+
+  &-item {
+    border-radius: 24px;
+
+    &-header {
+      border-start-end-radius  : inherit;
+      border-start-start-radius: inherit;
+      position                 : relative;
+      overflow                 : hidden;
+      height                   : 142px;
+      display                  : flex;
+      align-items              : center;
+      justify-content          : space-between;
+      color                    : #fff;
+      padding-left             : 32px;
+      padding-right            : 16px;
+
+      @media (max-width: theme('screens.sm')) {
+        height : 114px;
+        padding: 10px 16px;
+
+      }
+    }
+
+    &-content {
+      border-end-end-radius  : inherit;
+      border-end-start-radius: inherit;
+      border                 : 1px solid theme('colors.default / 20%');
+      border-top             : none;
+      padding                : 16px;
+    }
+  }
+}
+
+.achievements {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  gap            : 32px;
+  padding-top    : 90px;
+  padding-bottom : 90px;
+  background     :
+    url("../img/started-top.png") repeat-x center top / auto,
+    url("../img/started-bottom.png") repeat-x center bottom / auto;
+
+  @media (max-width: theme('screens.lg')) {
+    flex-direction: column;
+    align-items   : flex-start;
+  }
+
+  @media (max-width: theme('screens.md')) {
+    background:
+      url("../img/started-top-sm.png") repeat-x center top / auto,
+      url("../img/started-bottom-sm.png") repeat-x center bottom / auto;
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    padding-top   : 56px;
+    padding-bottom: 56px;
+  }
+
+  &-content {
+    // temp
+  }
+
+  &-image {
+    width        : 560px;
+    max-width    : 100%;
+    flex-shrink  : 0;
+    border-radius: 32px;
+    overflow     : hidden;
+
+    @media (max-width: theme('screens.lg')) {
+      order: -1;
+    }
+  }
+
+}
+
+.prize {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  gap            : 32px;
+  padding-top    : 42px;
+  padding-bottom : 42px;
+  background     :
+    url("../img/price-path.svg") no-repeat center, theme('colors.l3');
+
+  @media (max-width: theme('screens.lg')) {
+    flex-direction: column;
+    align-items   : flex-start;
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    background: theme('colors.l3');
+  }
+
+  &-personal {
+    padding-top   : 90px;
+    padding-bottom: 90px;
+    background    :
+      url("../img/started-top.png") repeat-x center top / auto,
+      url("../img/started-bottom.png") repeat-x center bottom / auto;
+
+    @media (max-width: theme('screens.md')) {
+      background:
+        url("../img/started-top-sm.png") repeat-x center top / auto,
+        url("../img/started-bottom-sm.png") repeat-x center bottom / auto;
+    }
+
+    @media (max-width: theme('screens.sm')) {
+      padding-top   : 56px;
+      padding-bottom: 56px;
+    }
+  }
+
+  &-image {
+    width        : 560px;
+    max-width    : 100%;
+    flex-shrink  : 0;
+    border-radius: 32px;
+    overflow     : hidden;
+
+    @media (max-width: theme('screens.lg')) {
+      order: -1;
+    }
+  }
+}
+
+.team {
+  background:
+    url("../img/started-top.png") repeat-x calc(50%) top / auto,
+    url("../img/started-bottom.png") repeat-x center bottom / auto,
+    url("../img/team-bg-sm.jpg") repeat center / auto, #000;
+  padding-top   : 96px;
+  padding-bottom: 122px;
+
+
+
+  @media (max-width: theme('screens.md')) {
+    background:
+      url("../img/started-top-sm.png") repeat-x center top / auto,
+      url("../img/started-bottom-sm.png") repeat-x center bottom / auto,
+      url("../img/team-bg-sm.jpg") repeat center / auto, #000;
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    padding-top   : 56px;
+    padding-bottom: 56px;
+  }
+
+  &-item {
+    border-radius : 24px;
+    background    : theme('colors.l3');
+    padding-bottom: 32px;
+    overflow      : hidden;
+    display       : flex;
+    flex-direction: column;
+    gap           : 18px;
+
+    &-image {
+      // temp
+    }
+
+    &-content {
+      padding-left : 16px;
+      padding-right: 16px;
+    }
+
+  }
+}
+
+.support {
+  padding-top   : 90px;
+  padding-bottom: 90px;
+  background    :
+    url("../img/started-top.png") repeat-x center top / auto,
+    url("../img/started-bottom.png") repeat-x center bottom / auto;
+
+  @media (max-width: theme('screens.md')) {
+    background:
+      url("../img/started-top-sm.png") repeat-x center top / auto,
+      url("../img/started-bottom-sm.png") repeat-x center bottom / auto;
+  }
+
+  @media (max-width: theme('screens.sm')) {
+    padding-top   : 56px;
+    padding-bottom: 56px;
+  }
+
+  &-item {
+    background    : theme('colors.l3');
+    border-radius : 24px;
+    padding-bottom: 24px;
+
+    &-image {
+      height : 185px;
+      display: flex;
+
+      @media (max-width: theme('screens.xs')) {
+        height: 148px;
+      }
+
+      img {
+        max-height: 100%;
+      }
+    }
+  }
+}
+
+.pray {
+  padding-top   : 32px;
+  padding-bottom: 64px;
+  background    : theme('colors.l3');
+
+  @media (max-width: theme('screens.sm')) {
+    padding-top   : 12px;
+    padding-bottom: 32px;
+  }
+}
+
+.map {
+  height  : 482px;
+  position: relative;
+
+  @media (max-width: theme('screens.sm')) {
+    height: 432px;
+  }
+
+  &-clouds {
+    background:
+      url("../img/started-top.png") repeat-x center top / auto,
+      url("../img/started-bottom.png") repeat-x center bottom / auto;
+
+    @media (max-width: theme('screens.md')) {
+      background:
+        url("../img/started-top-sm.png") repeat-x center top / auto,
+        url("../img/started-bottom-sm.png") repeat-x center bottom / auto;
+    }
+  }
+}
+
+.footer {
+  display        : flex;
+  background     : theme('colors.l3');
+  justify-content: space-between;
+  gap            : 24px;
+  padding-top    : 20px;
+  padding-bottom : 20px;
+
+  @media (max-width: theme('screens.lg')) {
+    flex-direction: column;
   }
 
 }

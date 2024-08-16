@@ -1,5 +1,307 @@
 <%= require('./html-includes/header.html')() %>
 
-<div class="doc"></div>
+<section class="started">
+  <div class="started-shadow"></div>
+  <div class="started-clouds absolute-fit"></div>
+  <img src="img/started-left.png" alt="" class="started-left">
+  <img src="img/started-right.png" alt="" class="started-right">
+
+  <div class="started-content">
+    <img src="img/started-logo.png" alt="" class="started-logo">
+    <div class="started-title">
+      Регбийный <br>
+      Фестиваль
+    </div>
+    <div class="started-subtitle">
+      в честь Дня Рождения <br>
+      Ростсельмаш- лиги
+    </div>
+
+    <div class="w-48 rounded-2xl overflow-hidden mt-6 md:mt-10">
+      <div class="bg-white py-3 relative">
+        <div class="text-center text-primary font-extrabold text-1.5xl">
+          7 сен 2024
+        </div>
+        <img src="img/started-date.png" alt="" class="absolute top-full left-0 w-full object-top -mt-px">
+      </div>
+      <div class="bg-primary py-3">
+        <div class="text-center text-white font-extrabold">
+          09:00 - 15:00
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-6 md:mt-10 max-sm:text-sm md:text-xl text-center">
+      г. Ростов-на-Дону, ул. 1-й Конной Армии, д. 4И, Г <br class="max-sm:hidden">
+      футбольное поле СШОР № 8
+    </div>
+  </div>
+  <div class="started-bottom">
+    <div class="text-center font-extrabold text-lg">
+      При поддержке
+    </div>
+    <img src="img/started-partner.png" alt="" class="mt-3">
+  </div>
+</section>
+
+<section class="programm">
+  <div class="title text-center mb-6 sm:mb-10">ПРОГРАММА ФЕСТИВАЛЯ</div>
+  <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-2.5 programm-grid">
+    <% for(let i = 0; i < 10; i++) { %>
+    <div class="programm-item">
+      <div class="programm-item-image">
+        <img src="/img/programm/1.svg" alt="" class="icon">
+      </div>
+      <div class="programm-item-content">
+        <div class="sm:text-lg/xs text-center font-extrabold uppercase">
+          Турнир
+          по регби-7
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<section class="reglament overflow-hidden">
+  <div class="title text-center mb-6 sm:mb-10">РЕГЛАМЕНТ ТУРНИРОВ</div>
+  <div class="reglament-slider swiper -mx-2 max-lg:overflow-visible">
+    <div class="swiper-wrapper">
+
+      <% for(let i = 0; i < 3; i++) { %>
+      <div class="swiper-slide px-2 w-11/12 sm:w-8/12 md:w-1/2 lg:w-1/3">
+        <div class="reglament-item">
+          <div class="reglament-item-header">
+            <img src="img/reglament/1-bg.jpg" alt="" class="absolute-fit object-cover">
+            <div class="text-lg font-extrabold uppercase relative">
+              Турнир <br>
+              по регби-7
+            </div>
+            <img src="img/reglament/1.png" alt="" class="relative max-h-full">
+          </div>
+          <div class="reglament-item-content">
+            <div class="flex flex-col gap-3 sm:gap-5">
+              <% for(let i = 0; i < 7; i++) { %>
+              <div class="max-sm:text-sm">
+                <div class="opacity-60">Участники</div>
+                <div class="font-extrabold">До 6 команд</div>
+              </div>
+              <% } %>
+            </div>
+            <div class="mt-6 flex items-center gap-1">
+              <c-icon class="icon text-xl text-primary" href="img/icons.svg#danger"></c-icon>
+              <div class="text-xs xs:text-sm font-extrabold text-primary">Необходим медицинский доступ</div>
+            </div>
+            <div class="mt-auto"></div>
+            <button class="btn btn-primary btn-fill w-full mt-6">
+              <span class="uppercase font-extrabold">оставить заявку</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+  <button class="btn btn-primary btn-light w-full mt-6 gap-4 h-auto py-4">
+    <c-icon class="icon text-2xl" href="img/icons.svg#user-hand-up"></c-icon>
+    <span class="font-extrabold text-left">Один участник может быть заявлен только в один из турниров</span>
+  </button>
+</section>
+<script>
+  new Swiper('.reglament-slider', {
+    slidesPerView: 'auto'
+  })
+</script>
+
+<section class="achievements">
+  <div class="achievements-content">
+    <div class="title mb-6">наши достижения</div>
+    <div class="opacity-80 mb-3 max-sm:text-sm">
+      Ростсельмаш-лига - динамично развивающий
+      проект, созданный по инициативе
+      ГК «РОСТСЕЛЬМАШ» и Федерации регби России
+    </div>
+    <div class="font-bold opacity-80 mb-6">
+      За 4 года проект охватил:
+    </div>
+    <div class="flex flex-col gap-6">
+      <div>
+        <div class="text-primary text-5xl sm:text-7xl/none font-extrabold">400</div>
+        <div class="font-bold">образовательных организаций</div>
+      </div>
+      <div>
+        <div class="text-primary text-5xl sm:text-7xl/none font-extrabold">1 500</div>
+        <div class="font-bold">команд</div>
+      </div>
+      <div>
+        <div class="text-primary text-5xl sm:text-7xl/none font-extrabold">20 000+</div>
+        <div class="font-bold">участников</div>
+      </div>
+    </div>
+  </div>
+  <div class="achievements-image ratio ratio-1/1">
+    <img src="img/achievements-image.jpg" alt="" class="absolute-fit">
+  </div>
+</section>
+
+<section class="prize">
+  <div class="prize-image ratio ratio-[560/374]">
+    <img src="img/prize.jpg" alt="" class="absolute-fit object-cover">
+  </div>
+  <div class="prize-content">
+    <div class="title mb-8">
+      КОМАНДНЫЕ <br>
+      ПРИЗЫ
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-3">
+        <c-icon class="icon text-2xl text-primary" href="img/icons.svg#trophy"></c-icon>
+        <div class="font-semibold">Памятные кубки победителям и призёрам</div>
+      </div>
+      <div class="flex items-center gap-3">
+        <c-icon class="icon text-2xl text-primary" href="img/icons.svg#trophy"></c-icon>
+        <div class="font-semibold">Памятные медали всем участникам</div>
+      </div>
+      <div class="flex items-center gap-3">
+        <c-icon class="icon text-2xl text-primary" href="img/icons.svg#trophy"></c-icon>
+        <div class="font-semibold">Призыв от ГК «Ростсельмаш»</div>
+      </div>
+      <div class="flex items-center gap-3">
+        <c-icon class="icon text-2xl text-primary" href="img/icons.svg#trophy"></c-icon>
+        <div class="font-semibold">Сладкие призы</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prize prize-personal">
+  <div class="prize-content">
+    <div class="title mb-8">
+      ИНДИВИДУАЛЬНЫЕ <br>
+      ПРИЗЫ
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-3">
+        <c-icon class="icon text-2xl text-primary" href="img/icons.svg#medal"></c-icon>
+        <div class="font-semibold">
+          Самый ценный игрок по мнению <br>
+          профессиональных игроков
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <c-icon class="icon text-2xl text-primary" href="img/icons.svg#medal"></c-icon>
+        <div class="font-semibold">Лучший игрок команды</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="prize-image ratio ratio-[560/374]">
+    <img src="img/prize-personal.jpg" alt="" class="absolute-fit object-cover">
+  </div>
+</section>
+
+<section class="team">
+  <div class="title text-white text-center mb-6 sm:mb-10">ХЕДЛАЙНЕРЫ ФЕСТИВАЛЯ</div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+    <% for(let i = 0; i < 4; i++) { %>
+    <div class="team-item max-w-96 mx-auto">
+      <div class="team-item-image ratio ratio-[264/246]">
+        <img src="img/team/1.jpg" alt="" class="absolute-fit">
+      </div>
+      <div class="team-item-content">
+        <div class="uppercase text-lg font-extrabold text-center mb-3 sm:mb-4">
+          Дмитрий
+          Образцов
+        </div>
+        <div class="opacity-70 text-center font-semibold">
+          Президент Ассоциации
+          «Ростсельмаш - лига»,
+          Член Совета директоров
+          ПАО «Ростсельмаш»
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<section class="support">
+  <div class="title text-center mb-6 sm:mb-12">
+    ФЕСТИВАЛЬ ПРОВОДИТСЯ <br>
+    ПРИ ПОДДЕРЖКЕ:
+  </div>
+  <img src="img/rostselmash.svg" alt="" class="mx-auto">
+  <div class="mt-4 mx-auto text-center sm:text-lg font-extrabold">
+    Группа компаний «Ростсельмаш»
+  </div>
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mt-10 sm:mt-14">
+    <% for(let i = 0; i < 4; i++) { %>
+    <div class="support-item">
+      <div class="support-item-image p-3">
+        <img src="img/support/1.png" alt="" class="m-auto">
+      </div>
+      <div class="px-3">
+        <div class="sm:text-lg font-extrabold text-center">
+          Федерация регби
+          России
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<section class="pray">
+  <img src="img/pray.png" alt="" class="mx-auto mb-6">
+  <div class="title text-center mb-5">
+    ХОТИТЕ ПРИНЯТЬ УЧАСТИЕ В ФЕСТИВАЛЕ?
+  </div>
+  <div class="text-center uppercase text-xl sm:text-2xl font-semibold">ПОДАЙТЕ ЗАЯВКУ НА ОДНУ ИЗ ДИСЦИПЛИН</div>
+  <div class="grid lg:grid-cols-3 gap-4 lg:gap-6 sm:px-18 mt-9">
+    <button class="btn btn-primary btn-fill px-3">
+      <span class="uppercase font-extrabold">РЕГБИ-7</span>
+    </button>
+    <button class="btn btn-primary btn-fill px-3">
+      <span class="uppercase font-extrabold">ТЭГ-РЕГБИ</span>
+    </button>
+    <button class="btn btn-primary btn-fill px-3">
+      <span class="uppercase font-extrabold">тэг-регби со взрослыми</span>
+    </button>
+  </div>
+</section>
+
+<div class="map">
+  <div class="map-inner absolute-fit" id="map"></div>
+  <div class="map-clouds absolute-fit"></div>
+</div>
+
+<footer class="footer">
+  <div>
+    <div class="text-lg font-extrabold mb-2">Место проведения фестиваля:</div>
+    <div class="max-sm:text-sm">
+      г. Ростов-на-Дону, ул. 1-й Конной Армии, д. 4Е футбольное поле СШОР № 8
+    </div>
+  </div>
+
+  <div>
+    <div class="text-lg font-extrabold mb-2">Мы в социальных сетях:</div>
+    <div class="flex gap-4">
+      <button class="btn btn-text relative hover:scale-110">
+        <div class="absolute -inset-2"></div>
+        <img src="img/telegram.png" alt="">
+      </button>
+      <button class="btn btn-text relative hover:scale-110">
+        <div class="absolute -inset-2"></div>
+        <img src="img/youtube.png" alt="">
+      </button>
+      <button class="btn btn-text relative hover:scale-110">
+        <div class="absolute -inset-2"></div>
+        <img src="img/vk.png" alt="">
+      </button>
+    </div>
+  </div>
+
+</footer>
 
 <%= require('./html-includes/footer.html')() %>

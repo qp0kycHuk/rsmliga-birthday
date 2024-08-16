@@ -1,9 +1,9 @@
 const elementsSizes = {
-  xs: '24px',
-  sm: '32px',
-  base: '42px',
-  lg: '52px',
-  xl: '64px',
+  xs: '36px',
+  sm: '42px',
+  base: '52px',
+  lg: '64px',
+  xl: '72px',
 }
 
 const headingStyles = {
@@ -50,7 +50,7 @@ module.exports = {
       default: withOpacity('--default-rgb'),
     },
     fontFamily: {
-      base: "'Gilroy', arial, helvetica, sans-serif",
+      base: "'RF Dewi Extended', arial, helvetica, sans-serif",
     },
     zIndex: [0, 321, 322, 323, 324, 325, 326, 327, 328, 329, 'auto'],
     extend: {
@@ -71,6 +71,9 @@ module.exports = {
         '3.5xl': ['2rem', '1.35'],
         '4.5xl': ['2.5rem', '1.35'],
       },
+      lineHeight: {
+        xs: '1.1'
+      }
     },
   },
   plugins: [
